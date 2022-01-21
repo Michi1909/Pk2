@@ -1,0 +1,1 @@
+void ascii(int s);
