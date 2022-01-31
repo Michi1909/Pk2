@@ -14,8 +14,8 @@ namespace fhdo_pk2
             ~Node() {}
         };
         typedef struct Node *node;
-        node first;
-        node last;
+        fhdo_pk2::LinkedList::node first;
+        fhdo_pk2::LinkedList::node last;
         int anzahl;
 
     public:
@@ -208,7 +208,7 @@ namespace fhdo_pk2
         }
         /* Liefert den Text des ersten Elements der Liste (in */
         /* konstanter Zeit). */
-        const char *first()
+        const char *getfirst()
         {
             if (anzahl > 0)
                 return first->data;
@@ -216,7 +216,7 @@ namespace fhdo_pk2
         }
         /* Liefert den Text des letzten Elements der Liste (in */
         /* konstanter Zeit). */
-        const char *last()
+        const char *getlast()
         {
             if (anzahl > 0)
                 return last->data;
@@ -234,5 +234,5 @@ namespace fhdo_pk2
             }
             std::cout << std::endl;
         }
-        };
+    };
 } // namespace fhdo_pk2
