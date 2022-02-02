@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Iterator.h"
+
 namespace fhdo_pk2
 {
     class LinkedList
@@ -16,6 +18,27 @@ namespace fhdo_pk2
         fhdo_pk2::LinkedList::node first;
         fhdo_pk2::LinkedList::node last;
         int count;
+
+        class ListIterator : public Iterator
+        {
+        private:
+            node nextInitNode;
+
+        public:
+            ListIterator(node nextInitNode) : nextInitNode(nextInitNode) {}
+            bool hasNext() override { return nextInitNode != nullptr; }
+            const char *next() override
+            {
+                const char *erg;
+                if (hasNext())
+                {
+                    erg = nextInitNode->data;
+                    nextInitNode = nextInitNode->next;
+                    return erg;
+                }
+                return nullptr;
+            }
+        };
 
     public:
         LinkedList() : first(nullptr), last(nullptr), count(0) {}
@@ -223,13 +246,20 @@ namespace fhdo_pk2
         /* Element die Funktion work auf. */
         void visit_all(void (*work)(const char *t))
         {
-            node temp = first;
-            while (temp != nullptr)
+            /* node temp = first;
+            while (temp != nullptr)             
             {
                 work(temp->data);
                 temp = temp->next;
             }
-            std::cout << std::endl;
+            std::cout << std::endl; */
+
+            //Using Iterator
+            Iterator *it = iterator();
+            while (it->hasNext())
+            {
+                work(it->next());
+            }
         }
         void printList()
         {
@@ -245,6 +275,12 @@ namespace fhdo_pk2
         int countElemente()
         {
             return count;
+        }
+
+        Iterator *iterator()
+        {
+            Iterator *it = new ListIterator(first);
+            return it;
         }
     };
 } // namespace fhdo_pk2
