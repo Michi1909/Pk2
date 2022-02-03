@@ -234,5 +234,20 @@ namespace fhdo_pk2
             }
             std::cout << std::endl;
         }
+        void printList()
+        {
+            node temp = first;
+            while (temp != nullptr)
+            {
+                std::cout << temp->data << "\t";
+                temp = temp->next;
+            }
+            std::cout << std::endl;
+        }
+        // anzahl Elemnte
+        int anzahlElemente()
+        {
+            return anzahl;
+        }
     };
 } // namespace fhdo_pk2
