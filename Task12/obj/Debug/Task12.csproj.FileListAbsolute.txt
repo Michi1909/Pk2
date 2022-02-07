@@ -1,0 +1,8 @@
+C:\Users\Kaise\Desktop\PK2\Pk2\Task12\obj\Debug\Task12.csproj.AssemblyReference.cache
+C:\Users\Kaise\Desktop\PK2\Pk2\Task12\obj\Debug\Task12.csproj.SuggestedBindingRedirects.cache
+C:\Users\Kaise\Desktop\PK2\Pk2\Task12\obj\Debug\Task12.csproj.CoreCompileInputs.cache
+C:\Users\Kaise\Desktop\PK2\Pk2\Task12\bin\Debug\Task12.exe.config
+C:\Users\Kaise\Desktop\PK2\Pk2\Task12\bin\Debug\Task12.exe
+C:\Users\Kaise\Desktop\PK2\Pk2\Task12\bin\Debug\Task12.pdb
+C:\Users\Kaise\Desktop\PK2\Pk2\Task12\obj\Debug\Task12.exe
+C:\Users\Kaise\Desktop\PK2\Pk2\Task12\obj\Debug\Task12.pdb
