@@ -1,7 +1,7 @@
 #include <Stdio.h>
 #include "Queue.h"
 
-void main(void)
+int main(void)
 {
     enqueue(1);
     enqueue(2);
@@ -15,4 +15,5 @@ void main(void)
     enqueue(5);
     printf("%i ", dequeue());
     printf("%i \n", dequeue());
+    return 0;
 }
