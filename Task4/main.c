@@ -14,7 +14,7 @@ int main()
     }
     for (i = SIZE + 1; i <= 2 * SIZE; i++)
     {
-        printf("%d", delete (i));
+        printf("%d", deleted(i));
     }
     for (i = 1; i <= 2 * SIZE; i++)
     {
