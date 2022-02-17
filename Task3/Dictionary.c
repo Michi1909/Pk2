@@ -45,7 +45,7 @@ int insert(int value)
     }
 }
 
-int delete (int value)
+int deleted(int value)
 {
 
     if (elements <= MAX)
