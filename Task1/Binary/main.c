@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "Binary.h"
 
-void main(void)
+int main(void)
 {
     printf("Aufgabe 4: \n");
     unsigned int decimal;
@@ -10,4 +10,5 @@ void main(void)
     binary(decimal);
     printf("\n");
     printf("\n");
+    return 0;
 }
