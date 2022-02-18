@@ -6,7 +6,7 @@
 char *stringcat(const char *str1, const char *str2)
 {
     int length = strlen(str1) + strlen(str2);
-    char *newlength = malloc(length + 1);
+    char *newlength = (char *)malloc(length + 1);
     while (*str1)
     {
         *newlength = *str1;

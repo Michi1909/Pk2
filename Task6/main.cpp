@@ -15,30 +15,30 @@ int main()
      LinkedList list{};
      list.append("Michaela");
      list.printList();
-     cout << "Anazhl Emelmte : " << list.anzahlElemente() << endl;
+     cout << "Anazhl Elemente : " << list.anzahlElemente() << endl;
      cout << endl;
      list.append("Ella");
      list.printList();
-     cout << "Anazhl Emelmte : " << list.anzahlElemente() << endl;
+     cout << "Anazhl Elemente : " << list.anzahlElemente() << endl;
      cout << endl;
      list.append("Kaiser");
      list.printList();
-     cout << "Anazhl Emelmte : " << list.anzahlElemente() << endl;
+     cout << "Anazhl Elemente : " << list.anzahlElemente() << endl;
      cout << endl;
 
      list.insert("Insert Anfang", 0);
      list.printList();
-     cout << "Anazhl Emelmte : " << list.anzahlElemente() << endl;
+     cout << "Anazhl Elemente : " << list.anzahlElemente() << endl;
      cout << endl;
 
      list.insert("Insert Ende", 4);
      list.printList();
-     cout << "Anazhl Emelmte : " << list.anzahlElemente() << endl;
+     cout << "Anazhl Elemente : " << list.anzahlElemente() << endl;
      cout << endl;
 
      list.insert("Insert Mitte", 2);
      list.printList();
-     cout << "Anazhl Emelmte : " << list.anzahlElemente() << endl;
+     cout << "Anazhl Elemente : " << list.anzahlElemente() << endl;
      cout << endl;
 
      cout << "Index of \"Insert Ende\" is : " << list.index_of("Insert Ende") << endl;
@@ -46,7 +46,7 @@ int main()
 
      cout << "Remove Out of Index : " << list.remove(10) << endl;
      list.printList();
-     cout << "Anazhl Emelmte : " << list.anzahlElemente() << endl;
+     cout << "Anazhl Elemente : " << list.anzahlElemente() << endl;
      cout << endl;
 
      cout << "Index of Michaela is : " << list.index_of("Michaela") << endl;
@@ -57,7 +57,7 @@ int main()
 
      cout << "Remove First : " << list.remove(0) << endl;
      list.printList();
-     cout << "Anazhl Emelmte : " << list.anzahlElemente() << endl;
+     cout << "Anazhl Elemente : " << list.anzahlElemente() << endl;
      cout << endl;
 
      cout << "Index of Ella is : " << list.index_of("Ella") << endl;
@@ -68,7 +68,7 @@ int main()
 
      cout << "Remove Index of(2) : " << list.remove(2) << endl;
      list.printList();
-     cout << "Anazhl Emelmte : " << list.anzahlElemente() << endl;
+     cout << "Anzahl Elemente : " << list.anzahlElemente() << endl;
      cout << endl;
 
      cout << "Index of Ella is : " << list.index_of("Ella") << endl;

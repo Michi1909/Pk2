@@ -1,104 +1,94 @@
 #include <iostream>
 #include "LinkedList.h"
+#include "media.h"
+#include "picture.h"
+#include "audio.h"
 #include <string>
 
 using namespace std;
 using namespace fhdo_pk2;
-void printed(const char *t)
+
+void ausgabe(const char *t)
+{
+    std::cout << t << std::endl;
+}
+template <typename T>
+void ausgabe(T t)
 {
     cout << t << endl;
+}
+template <typename T>
+void ausgabeZeiger(T t)
+{
+    cout << *t << endl;
+}
+
+void ausgabemedia(media *obj)
+{
+    obj->printData();
+}
+
+void deletemedia(media *obj)
+{
+    delete obj;
 }
 int main()
 {
 
-    LinkedList liste;
+    cout << "String Liste : " << endl;
+    LinkedList<string> liste{};
     liste.append("Element 1");
     liste.insert("Element 2", 2);
-    LinkedList liste2 = liste;
+    LinkedList<string> liste2 = liste;
     cout << "Liste:" << endl;
-    liste.visit_all(printed);
+    liste.visit_all(ausgabe);
     liste.remove(2);
     cout << "Liste:" << endl;
-    liste.visit_all(printed);
+    liste.visit_all(ausgabe);
     cout << "Liste2:" << endl;
-    liste2.visit_all(printed);
+    liste2.visit_all(ausgabe);
 
-    liste.append("Michaela");
-    liste.printList();
-    cout << "count Elements : " << liste.countElements() << endl;
-    cout << endl;
-    liste.append("Ella");
-    liste.printList();
-    cout << "count Elements : " << liste.countElements() << endl;
-    cout << endl;
-    liste.append("Kaiser");
-    liste.printList();
-    cout << "count Elements : " << liste.countElements() << endl;
-    cout << endl;
+    cout << "----------------" << endl;
 
-    liste.insert("Insert Anfang", 0);
-    liste.printList();
-    cout << "count Elements : " << liste.countElements() << endl;
-    cout << endl;
+    cout << "Integer Liste : " << endl;
+    LinkedList<int *> liste3;
+    int a = 1;
+    int b = 2;
+    liste3.append(&a);
+    liste3.insert(&b, 2);
+    LinkedList<int *> liste4 = liste3;
+    cout << "Liste:" << endl;
+    liste3.visit_all(ausgabeZeiger);
+    liste3.remove(2);
+    cout << "Liste:" << endl;
+    liste3.visit_all(ausgabeZeiger);
+    cout << "Liste2:" << endl;
+    liste4.visit_all(ausgabeZeiger);
 
-    liste.insert("Insert Ende", 4);
-    liste.printList();
-    cout << "count Elements : " << liste.countElements() << endl;
-    cout << endl;
+    cout << "-----------------" << endl;
+    audio *audiobib = new audio("Celin Dion", 225, "I Will always Love u ", 1985);
+    picture *bild = new picture("Dortmund", 2018, "Sunset");
+    cout << "media Liste : " << endl;
+    LinkedList<media *> liste5{};
+    liste5.append(audiobib);
+    liste5.insert(bild, 2);
+    LinkedList<media *> liste6 = liste5;
+    cout << "Liste1:" << endl;
+    liste5.visit_all(ausgabemedia);
+    liste5.remove(2);
+    cout << "Liste1:" << endl;
+    liste5.visit_all(ausgabemedia);
+    cout << "Liste2:" << endl;
+    liste6.visit_all(ausgabemedia);
 
-    liste.insert("Insert Mitte", 2);
-    liste.printList();
-    cout << "count Elements : " << liste.countElements() << endl;
     cout << endl;
-
-    cout << "Index of \"Insert Ende\" is : " << liste.index_of("Insert Ende") << endl;
-    cout << endl;
-
-    cout << "Remove Out of Index : " << liste.remove(10) << endl;
-    liste.printList();
-    cout << "count Elements : " << liste.countElements() << endl;
-    cout << endl;
-
-    cout << "Index of Kaiser is : " << liste.index_of("Kaiser") << endl;
-    cout << endl;
-
-    cout << "Index of kaiser is : " << liste.index_of("kaiser") << endl;
-    cout << endl;
-
-    cout << "Remove First : " << liste.remove(0) << endl;
-    liste.printList();
-    cout << "count Elements : " << liste.countElements() << endl;
-    cout << endl;
-
-    cout << "Index of Michaela is : " << liste.index_of("Michaela") << endl;
-    cout << endl;
-
-    cout << "Index of Ella is : " << liste.index_of("Ella") << endl;
-    cout << endl;
-
-    cout << "Remove Index of(2) : " << liste.remove(2) << endl;
-    liste.printList();
-    cout << "count Elemente : " << liste.countElements() << endl;
-    cout << endl;
-
-    cout << "Index of Ella is : " << liste.index_of("Ella") << endl;
-    cout << endl;
-
-    cout << "Index of Kaiser is : " << liste.index_of("Kaiser") << endl;
-    cout << endl;
-
-    liste.printList();
-    cout << endl;
-    cout << "Get data from index  2 : " << liste.get(2) << endl;
-    cout << "Get data from index  1 : " << liste.get(1) << endl;
-    cout << "Get data from index  0 : " << liste.get(0) << endl;
-    cout << endl;
-    liste.printList();
-    cout << "Get First : " << liste.getfirst() << endl;
-    cout << "Get Last  : " << liste.getlast() << endl;
-    cout << endl;
-    cout << "Printing using Work" << endl;
-    cout << "Visit_all : " << endl;
-    liste.visit_all(printed);
-    return 1;
+    cout << "After Delete" << endl;
+    liste6.visit_all(deletemedia);
+    // media Objecte wurden gelöcht aber die NODES in denen die media Objekte waren
+    // müssen auch gelöcht werden !
+    for (int i = 0; i < liste6.anzahlElemente(); i++)
+    {
+        liste6.remove(i);
+    }
+    return 0;
 }

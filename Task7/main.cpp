@@ -2,6 +2,7 @@
 #include "Medium.h"
 #include "Bild.h"
 #include "Audio.h"
+using namespace std;
 
 int main(void)
 {
@@ -19,11 +20,16 @@ int main(void)
     Medium *a2 = new Audio("Totally not importand", 2022, "Totally not important", 333);
     Medium *a3 = new Audio("happpy and bla bla bla ", 2022, "Happy and bla bla bla", 202);
 
-    for (int i = 0; i < 3; i++)
+    std::cout << "Audio with Pointer Bib:" << std::endl;
+    a1->druckeDaten();
+    a2->druckeDaten();
+    a3->druckeDaten();
+
+    for (int i = 0; i < sizeof(bildBib); i++)
     {
-        a1->druckeDaten();
-        a2->druckeDaten();
-        a3->druckeDaten();
+        std::cout << "Bild Bib" << std::endl;
         bildBib[i]->druckeDaten();
+        std::cout << "Audio Bib" << std::endl;
+        audioBib[i]->druckeDaten();
     }
 }

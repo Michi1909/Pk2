@@ -20,4 +20,4 @@ public:
 };
 Bild::Bild(std::string title, int year, std::string ort) : Medium(title, year), ort(ort) {}
 Bild::~Bild() {}
-#endif //BILD_H_INCLUDED
+#endif // BILD_H_INCLUDED

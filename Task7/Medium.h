@@ -8,7 +8,7 @@
 class Medium
 {
 private:
-    const int id;
+    int const id;
     std::string title;
     int year;
     int count = 0;

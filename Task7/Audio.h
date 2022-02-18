@@ -25,4 +25,4 @@ Audio::Audio(std::string title, int year, std::string interpret, int dauer) : Me
 {
 }
 Audio::~Audio() {}
-#endif //AUDIO_H_INCLUDED
+#endif // AUDIO_H_INCLUDED

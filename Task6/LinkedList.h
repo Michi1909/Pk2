@@ -194,9 +194,10 @@ namespace fhdo_pk2
         int index_of(const char *text)
         {
             node temp = first;
+            int index = 0;
             while (temp != nullptr)
             {
-                int index = 0;
+
                 if (text == temp->data)
                 {
                     return index;
