@@ -4,27 +4,21 @@
 #include <iostream>
 
 #define actuallyYear 2021
-
+using namespace std;
 class Medium
 {
 private:
-    int const id;
-    std::string title;
+    string title;
     int year;
-    int count = 0;
+    int const id;
 
 public:
-    Medium(std::string title, int year);
-    virtual ~Medium();
-    int alter() { return actuallyYear - year; };
-    void virtual druckeDaten() = 0;
-    int getID() const { return id; }
-    std::string getTitle() { return title; }
-    int getYear() { return year; }
+    Medium(string title, int year, int count) : title(title), year(year), id(count) {}
+    inline string getTitle() { return title; }
+    inline int getYear() { return year; }
+    inline int getID() const { return id; }
+    inline int alter() { return actuallyYear - year; };
+    virtual void druckeDaten() = 0;
 };
-Medium::Medium(std::string title, int year) : title(title), year(year), id(count)
-{
-    count++;
-}
-Medium::~Medium() {}
+
 #endif //_MEDIUM_H_INCLUDED

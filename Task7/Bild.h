@@ -4,20 +4,20 @@
 #include "Medium.h"
 #include <string>
 
+using namespace std;
 class Bild : public Medium
 {
 private:
-    std::string ort;
+    string ort;
 
 public:
-    Bild(std::string title, int year, std::string ort);
-    virtual ~Bild();
-    std::string getOrt() { return ort; }
-    void druckeDaten() override
-    {
-        std::cout << "ID = " << this->getID() << " " << this->getTitle() << " aufgenommen im Jahr " << this->getYear() << " in " << this->getOrt() << std::endl;
-    }
+    Bild(string title, int year, int count, string ort) : Medium(title, year, count), ort(ort) {}
+    inline string getOrt() { return ort; }
+    void druckeDaten();
 };
-Bild::Bild(std::string title, int year, std::string ort) : Medium(title, year), ort(ort) {}
-Bild::~Bild() {}
+void Bild::druckeDaten()
+{
+    cout << "ID = " << this->getID() << " " << this->getTitle() << " aufgenommen im Jahr " << this->getYear() << " in " << this->getOrt() << endl;
+}
+
 #endif // BILD_H_INCLUDED
